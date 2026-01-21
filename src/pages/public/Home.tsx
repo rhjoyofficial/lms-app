@@ -1,11 +1,24 @@
+import HeroSection from "../../components/sections/HeroSection";
+import CoursesSection from "../../components/sections/CoursesSection";
+import HowItWorksSection from "../../components/sections/HowItWorksSection";
+import WhyStudyWithUsSection from "../../components/sections/WhyStudyWithUsSection";
+import TestimonialsSection from "../../components/sections/TestimonialsSection";
+import PartnersSection from "../../components/sections/PartnersSection";
+import FAQSection from "../../components/sections/FAQSection";
+import NewsletterSection from "../../components/sections/NewsletterSection";
+
 const Home = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">Welcome to LMS</h1>
-      <p className="text-gray-600">
-        Learn skills, track progress, earn certificates.
-      </p>
-    </div>
+    <>
+      <HeroSection />
+      <CoursesSection />
+      <HowItWorksSection />
+      <WhyStudyWithUsSection />
+      <TestimonialsSection />
+      <PartnersSection />
+      <FAQSection />
+      <NewsletterSection />
+    </>
   );
 };
 

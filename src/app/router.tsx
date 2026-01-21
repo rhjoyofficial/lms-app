@@ -12,12 +12,16 @@ import CertificateView from "../pages/student/CertificateView";
 import MainLayout from "../components/layout/MainLayout";
 
 export const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/courses", element: <Courses /> },
-  { path: "/courses/:slug", element: <CourseDetails /> },
-  { path: "/login", element: <Login /> },
-  { path: "/register", element: <Register /> },
-
+  {
+    element: <MainLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/courses", element: <Courses /> },
+      { path: "/courses/:slug", element: <CourseDetails /> },
+      { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
+    ],
+  },
   {
     path: "/student/dashboard",
     element: (
