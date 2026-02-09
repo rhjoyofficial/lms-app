@@ -1,5 +1,4 @@
 import api from "./axios";
-import { initCsrf } from "./csrf";
 
 export interface LoginPayload {
   email: string;
@@ -13,23 +12,23 @@ export interface RegisterPayload {
   password_confirmation: string;
 }
 
-/**
- * LOGIN
- */
 export const login = async (payload: LoginPayload) => {
-  await initCsrf();
   const res = await api.post("/auth/login", payload);
+  localStorage.setItem("auth_token", res.data.token);
   return res.data;
 };
 
-/**
- * REGISTER
- */
 export const register = async (payload: RegisterPayload) => {
-  await initCsrf();
   const res = await api.post("/auth/register", payload);
+  localStorage.setItem("auth_token", res.data.token);
   return res.data;
 };
+
+export const logout = async () => {
+  await api.post("/auth/logout");
+  localStorage.removeItem("auth_token");
+};
+
 
 /**
  * GET AUTH USER
@@ -39,9 +38,3 @@ export const fetchMe = async () => {
   return res.data.user;
 };
 
-/**
- * LOGOUT
- */
-export const logout = async () => {
-  await api.post("/auth/logout");
-};
