@@ -12,9 +12,10 @@ interface Props {
   courseId: number;
   price: number;
   offerPrice?: number;
+  mobileOnly?: boolean;
 }
 
-const CourseEnrollCard = ({ courseId, price, offerPrice }: Props) => {
+const CourseEnrollCard = ({ courseId, price, offerPrice, mobileOnly }: Props) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   // console.log(price, offerPrice);
@@ -107,12 +108,26 @@ const CourseEnrollCard = ({ courseId, price, offerPrice }: Props) => {
 
   // Already enrolled UI
   if (enrolled) {
+    if (mobileOnly) return null;
     return (
       <div className="bg-white border rounded-2xl p-6 shadow-sm">
         <p className="text-green-600 font-medium text-center">
           আপনি ইতিমধ্যে এই কোর্সে এনরোল করেছেন
         </p>
       </div>
+    );
+  }
+
+  // Mobile-only mode: only render the bottom CTA bar
+  if (mobileOnly) {
+    return (
+      <MobileEnrollCTA
+        price={finalPrice}
+        originalPrice={hasOffer || couponApplied ? originalPrice : undefined}
+        enrolled={enrolled}
+        loading={loading}
+        onEnroll={handleEnroll}
+      />
     );
   }
 

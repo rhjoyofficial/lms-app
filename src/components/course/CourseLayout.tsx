@@ -84,6 +84,16 @@ const CourseLayout = ({ course }: Props) => {
           />
         </div>
       </div>
+
+      {/* Mobile enroll CTA — rendered outside the hidden grid column */}
+      <div className="lg:hidden">
+        <CourseEnrollCard
+          courseId={course.id}
+          price={Number(course.price)}
+          offerPrice={Number(course.offerPrice)}
+          mobileOnly
+        />
+      </div>
     </section>
   );
 };
