@@ -20,14 +20,13 @@ const CourseDetails = () => {
 
   if (!course) {
     return (
-      <section className="py-4 md:py-20 bg-white">
-        <div className="max-w-8xl mx-auto px-4">
-          <p className="text-center text-gray-500">ডেটা লোড হচ্ছে...</p>
-        </div>
-      </section>
+      <div className="py-20 text-center">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-teal-600"></div>
+        <p className="mt-4 text-gray-600">কোর্স লোড হচ্ছে...</p>
+      </div>
     );
   }
-
+  
   return (
     <>
       <CourseHero course={course} />

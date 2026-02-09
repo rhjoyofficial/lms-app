@@ -76,7 +76,7 @@ const CourseContentLeft = ({ course }: Props) => {
                   <h4 className="font-semibold font-inter text-lg text-text-inverse">
                     {item.title}
                   </h4>
-                  <p className="text-base font-inter text-text-secondary mt-2">
+                  <p className="text-base font-inter text-[#9CA3AF] mt-2">
                     {item.description}
                   </p>
                 </div>

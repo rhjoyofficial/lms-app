@@ -4,11 +4,11 @@ export const heroData = {
   courseHighlight: "—উপহার কোর্স",
   subtitle:
     "বিশ্বমানের শিক্ষকদের সাথে যুক্ত হন এবং বাংলা ভাষা ও সংস্কৃতি আয়ত্ত করুন।",
-  enrolledCount: "25,000+",
+  enrolledCount: "5,000+",
   users: [
-    "/images/user1.jpg",
-    "/images/user2.jpg",
-    "/images/user3.jpg",
-    "/images/user4.jpg",
+    "/images/user1.png",
+    "/images/user2.png",
+    "/images/user3.png",
+    "/images/user4.png",
   ],
 };

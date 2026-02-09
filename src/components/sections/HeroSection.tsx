@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { heroData } from "../../data/home";
-import HeroBanner from "../../assets/hero-banner.jpg";
+import HeroBanner from "../../assets/hero-section.jpg";
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -72,7 +72,7 @@ const HeroSection = () => {
               </button>
             </div>
 
-            <div className="mt-4 md:mt-0 flex items-center -space-x-3">
+            <div className="mt-4 md:mt-0 flex items-center -space-x-2">
               {heroData.users.map((img, i) => (
                 <img
                   key={i}
@@ -94,7 +94,7 @@ const HeroSection = () => {
             <img
               src={HeroBanner}
               alt="Hero Banner"
-              className="rounded-2xl object-contain aspect-[4/3]"
+              className="w-full h-full rounded-2xl object-contain aspect-[5/4]"
             />
           </div>
         </div>

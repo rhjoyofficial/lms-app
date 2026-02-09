@@ -24,11 +24,11 @@ const CourseHero = ({ course }: Props) => {
             className="w-full rounded-2xl shadow-lg overflow-hidden bg-white"
           >
             {/* Aspect ratio box */}
-            <div className="w-full object-contain aspect-[4/3]">
+            <div className="w-full overflow-hidden rounded-2xl p-4 bg-white">
               <img
                 src={course.image}
                 alt={course.title}
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-full object-contain aspect-[5/3] rounded-xl"
               />
             </div>
           </motion.div>

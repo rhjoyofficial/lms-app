@@ -1,5 +1,5 @@
 import api from "./axios";
-
+import { initCsrf } from "./csrf";
 export interface LoginPayload {
   email: string;
   password: string;
@@ -16,6 +16,7 @@ export interface RegisterPayload {
  * LOGIN (needs cookies)
  */
 export const login = async (payload: LoginPayload) => {
+  await initCsrf();
   const res = await api.post("/auth/login", payload, {
     withCredentials: true, // ✅ ADD HERE
   });
@@ -26,6 +27,7 @@ export const login = async (payload: LoginPayload) => {
  * REGISTER (needs cookies)
  */
 export const register = async (payload: RegisterPayload) => {
+  await initCsrf();
   const res = await api.post("/auth/register", payload, {
     withCredentials: true, // ✅ ADD HERE
   });

@@ -180,14 +180,14 @@ const CourseGuidelineSection = () => {
         </div>
 
         {/* ===== Bottom CTA ===== */}
-        <div className="bg-[#123F3A] rounded-3xl p-8 text-center text-white shadow-lg">
-          <h3 className="text-lg md:text-xl font-semibold mb-2">
+        <div className="bg-gradient-to-t from-[#123F3A] via-[#1A5C54] to-[#2E7C74] rounded-3xl p-8 text-center text-white shadow-lg">
+          <h3 className="text-lg md:text-xl font-semibold mb-2 font-bengali">
             ভিডিও দেখে নিলেন?
           </h3>
-          <p className="text-sm md:text-base text-[#CFE7E4] mb-4">
+          <p className="text-sm md:text-base text-[#CFE7E4] mb-4 font-bengali">
             এখন ট্র্যাকার বই খুলে আজ থেকেই শুরু করুন
           </p>
-          <p className="text-sm md:text-base font-medium text-[#E6FFFB]">
+          <p className="text-sm md:text-base font-medium text-[#E6FFFB] font-bengali">
             ✨ "রমজান দ্রুত চলে যায়... কিন্তু রমজানে গড়া অভ্যাস সারাজীবন থাকে"
           </p>
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchCourses } from "../../api/course.api";
-import { ArrowRight, PlayCircle, Star } from "lucide-react";
+import { Clock, Users } from "lucide-react";
 
 interface Course {
   id: number;
@@ -9,9 +9,15 @@ interface Course {
   slug: string;
   image: string;
   price: string;
+  offer_price: string;
   is_paid: boolean;
   level: string;
+  duration: string;
+  description: string;
+  modules_count: string;
+  enrollments_count: string;
   category: { name: string };
+  instructor: { name: string };
 }
 
 const CourseGrid: React.FC = () => {
@@ -26,104 +32,122 @@ const CourseGrid: React.FC = () => {
 
   if (loading)
     return (
-      <div className="py-4 md:py-20 text-center animate-pulse text-brand-primary">
-        Loading Courses...
+      <div className="py-20 text-center">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-teal-600"></div>
+        <p className="mt-4 text-gray-600">কোর্স লোড হচ্ছে...</p>
       </div>
     );
 
   return (
-    <section className="bg-bg-light py-4 md:py-20 px-4 sm:px-6">
-      <div className="max-w-[104rem] mx-auto">
-        {" "}
-        {/* Using your 10xl maxWidth */}
-        {/* Header Area */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6 text-center md:text-left">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bengali font-bold text-text-primary tracking-tight">
-              শিখুন নিজের <span className="text-brand-primary">পছন্দমতো</span>{" "}
-              সময়ে
-            </h2>
-            <p className="text-text-secondary mt-2 font-inter font-medium">
-              Explore our premium Islamic curriculum
-            </p>
-          </div>
-          <Link
-            to="/courses"
-            className="px-6 py-2.5 border-2 border-brand-primary text-brand-primary rounded-full font-bold hover:bg-brand-primary hover:text-white transition-all duration-300"
-          >
-            View All Courses
-          </Link>
+    <div className="py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Simple Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-[32px] md:text-[42px] leading-relaxed text-text-primary font-normal mb-2">
+            আমাদের কোর্সসমূহ
+          </h2>
+          <p className="text-gray-600">
+            নিচের কোর্সগুলোর মধ্য থেকে আপনার পছন্দের কোর্সটি নির্বাচন করুন
+          </p>
         </div>
-        {/* 4 Column Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Simple Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course) => (
             <div
               key={course.id}
-              className="group relative bg-white rounded-2xl border border-border-subtle hover:border-brand-primary/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(47,124,116,0.1)] flex flex-col overflow-hidden"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Thumbnail Section */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              {/* Course Image */}
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
 
                 {/* Category Badge */}
-                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-brand-primary text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm font-inter">
-                  {course.category.name}
-                </span>
-              </div>
-
-              {/* Content Section */}
-              <div className="p-5 flex flex-col flex-grow">
-                <div className="flex items-center gap-1 text-brand-premium mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={12} fill="currentColor" />
-                  ))}
-                  <span className="text-[10px] text-text-secondary font-inter ml-1">
-                    (4.9)
+                <div className="absolute top-3 left-3">
+                  <span className="text-xs font-medium bg-white/90 backdrop-blur-sm text-teal-700 px-3 py-1 rounded-full">
+                    {course.category.name}
                   </span>
                 </div>
+              </div>
 
-                <h3 className="text-lg font-bengali font-bold text-text-primary leading-[1.4] mb-4 group-hover:text-brand-primary transition-colors min-h-[3.5rem] line-clamp-2">
+              {/* Course Content */}
+              <div className="p-4">
+                {/* Title */}
+                <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 h-14">
                   {course.title}
                 </h3>
 
-                {/* Footer Info */}
-                <div className="mt-auto pt-4 border-t border-border-subtle flex items-center justify-between">
-                  <div>
-                    <p className="text-[10px] text-text-secondary font-inter uppercase font-bold tracking-wider">
-                      Course Fee
-                    </p>
-                    <p className="text-xl font-bold text-brand-primary">
-                      {course.is_paid ? `৳${parseInt(course.price)}` : "FREE"}
-                    </p>
+                {/* Instructor */}
+                <p className="text-sm text-gray-600 mb-3">
+                  {course.instructor.name}
+                </p>
+
+                {/* Description */}
+                <p className="text-sm text-gray-500 mb-4 line-clamp-2 h-10">
+                  {course.description}
+                </p>
+
+                {/* Course Info */}
+                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Clock size={14} />
+                    <span>{course.duration}</span>
                   </div>
-
-                  <Link
-                    to={`/courses/${course.slug}`}
-                    className="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-soft text-brand-primary group-hover:bg-brand-premium group-hover:text-white transition-all duration-300 transform group-hover:rotate-[-45deg]"
-                  >
-                    <ArrowRight size={20} />
-                  </Link>
+                  <div className="flex items-center gap-1">
+                    <Users size={14} />
+                    <span>{course.enrollments_count}</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Hover Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                <PlayCircle
-                  size={48}
-                  className="text-white drop-shadow-2xl"
-                  strokeWidth={1.5}
-                />
+                {/* Price */}
+                <div className="flex items-center justify-between mb-4">
+                  {course.is_paid ? (
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg font-bold text-teal-700">
+                        ৳{parseInt(course.offer_price).toLocaleString()}
+                      </span>
+                      {parseInt(course.offer_price) <
+                        parseInt(course.price) && (
+                        <span className="text-sm text-gray-500 line-through">
+                          ৳{parseInt(course.price).toLocaleString()}
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <span className="text-lg font-bold text-teal-700">
+                      ফ্রি
+                    </span>
+                  )}
+
+                  <span
+                    className={`text-xs font-medium px-2 py-1 rounded ${
+                      course.level === "beginner"
+                        ? "bg-green-100 text-green-800"
+                        : course.level === "intermediate"
+                          ? "bg-yellow-100 text-yellow-800"
+                          : "bg-red-100 text-red-800"
+                    }`}
+                  >
+                    {course.level}
+                  </span>
+                </div>
+
+                {/* View Button */}
+                <Link
+                  to={`/courses/${course.slug}`}
+                  className="block w-full text-center bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 rounded-lg transition-colors"
+                >
+                  কোর্স দেখুন
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
