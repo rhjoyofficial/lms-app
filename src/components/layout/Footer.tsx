@@ -123,7 +123,7 @@ const Footer = () => {
             <ul className="space-y-3 text-base text-text-secondary font-inter">
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-white/90" />
-                support@azmion.com
+                support@cmmoin.academy
               </li>
 
               <li className="flex items-center gap-3">

@@ -9,7 +9,7 @@ const Topbar = () => {
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
               <path d="M12.667.667H3.333A3.337 3.337 0 0 0 0 4v8a3.34 3.34 0 0 0 3.333 3.333h9.334A3.337 3.337 0 0 0 16 12V4A3.337 3.337 0 0 0 12.667.667M3.333 2h9.334a2 2 0 0 1 1.853 1.258L9.415 8.364a2.005 2.005 0 0 1-2.83 0L1.48 3.258A2 2 0 0 1 3.333 2m9.334 12H3.333a2 2 0 0 1-2-2V5l4.31 4.307a3.34 3.34 0 0 0 4.714 0L14.667 5v7a2 2 0 0 1-2 2" />
             </svg>
-            support@azmion.com
+            support@cmmoin.academy
           </span>
           <span className="flex items-center gap-1">
             {/* Phone SVG */}
@@ -23,7 +23,7 @@ const Topbar = () => {
         {/* Center */}
         <div className="hidden md:flex text-center flex-1 items-center justify-center gap-2">
           <span className="font-medium text-base">
-            ক্যারিয়ারে এগিয়ে যেতে দরকারি দক্ষতা অর্জন করুন Azmion এ!
+            ক্যারিয়ারে এগিয়ে যেতে দরকারি দক্ষতা অর্জন করুন CM Moin Academy তে!
           </span>
         </div>
 
@@ -31,7 +31,7 @@ const Topbar = () => {
         <div className="flex items-center gap-2 text-white">
           {/* Facebook */}
           <a
-            href="#"
+            href="https://www.facebook.com/cmmoinacademy"
             className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 9 16">
@@ -41,7 +41,7 @@ const Topbar = () => {
 
           {/* Whatsapp */}
           <a
-            href="#"
+            href="https://wa.me/8801712345678"
             className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
           >
             <svg className="w-4 h-4" fill="white" viewBox="0 0 16 16">
@@ -51,7 +51,7 @@ const Topbar = () => {
 
           {/* YouTube */}
           <a
-            href="#"
+            href="https://www.youtube.com/@cmmoinacademy"
             className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
           >
             <svg className="w-4 h-4" fill="white" viewBox="0 0 24 24">

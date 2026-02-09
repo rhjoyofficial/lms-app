@@ -26,11 +26,7 @@ export const logout = async () => {
   await api.post("/auth/logout");
 };
 
-/**
- * GET AUTH USER
- * Backend /auth/me returns roles as full objects via load('roles').
- * Normalize to string[] to match the login/register response format.
- */
+
 export const fetchMe = async () => {
   const res = await api.get("/auth/me");
   const user = res.data.user;
