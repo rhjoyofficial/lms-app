@@ -2,7 +2,12 @@ import { useState } from "react";
 import { useAuth } from "../../auth/AuthContext";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
+import type { AxiosError } from "axios";
 
+interface ApiErrorResponse {
+  message?: string;
+  errors?: Record<string, string[]>;
+}
 const Register = () => {
   const { register, user } = useAuth();
   const navigate = useNavigate();
@@ -37,9 +42,30 @@ const Register = () => {
     try {
       await register(form);
       navigate("/student/dashboard");
-    } catch {
-      setError("রেজিস্ট্রেশন সম্পন্ন হয়নি। আবার চেষ্টা করুন।");
-    } finally {
+    } catch (err) {
+      const error = err as AxiosError<ApiErrorResponse>;
+
+      if (error.response?.data) {
+        const data = error.response.data;
+
+        // Laravel validation errors (422)
+        if (data.errors) {
+          const firstError = Object.values(data.errors)[0]?.[0];
+          setError(firstError ?? "Validation failed.");
+        }
+        // General API message
+        else if (data.message) {
+          setError(data.message);
+        }
+        else {
+          setError("রেজিস্ট্রেশন সম্পন্ন হয়নি। আবার চেষ্টা করুন।");
+        }
+      } else {
+        setError("Network error. Please check your connection.");
+      }
+    }
+
+    finally {
       setLoading(false);
     }
   };
@@ -226,9 +252,8 @@ const Register = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full rounded-full font-inter bg-brand-primary hover:bg-teal-800 text-white py-3 font-medium transition ${
-              loading ? "opacity-60 cursor-not-allowed" : ""
-            }`}
+            className={`w-full rounded-full font-inter bg-brand-primary hover:bg-teal-800 text-white py-3 font-medium transition ${loading ? "opacity-60 cursor-not-allowed" : ""
+              }`}
           >
             {loading ? "দয়া করে অপেক্ষা করুন..." : "একাউন্ট খুলুন"}
           </button>

@@ -44,11 +44,18 @@ const StudentTopbar = ({ title, onMenuClick }: Props) => {
           onClick={() => setOpen((v) => !v)}
           className="flex items-center gap-2 p-1.5 rounded-full hover:bg-gray-100"
         >
-          <img
-            src={user?.avatar ?? "https://ui-avatars.com/api/?name=" + user?.name}
-            className="w-8 h-8 rounded-full object-cover"
-            alt={user?.name}
-          />
+          {user?.avatar ? (
+            <img
+              src={user.avatar}
+              className="w-8 h-8 rounded-full object-cover"
+              alt={user.name}
+            />
+          ) : (
+            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-600">
+              {user?.name?.charAt(0).toUpperCase()}
+            </div>
+          )}
+
           <span className="hidden md:block text-sm font-medium text-gray-700">
             {user?.name?.split(" ")[0]}
           </span>

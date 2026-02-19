@@ -23,6 +23,5 @@ export const fetchLessonVideo = async (
   lessonId: number,
 ): Promise<LessonVideoData> => {
   const res = await api.get(`/student/lessons/${lessonId}/watch`);
-  console.log("API Response:", res.data);
   return res.data.lesson;
 };
