@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import StudentSidebar from "../student/StudentSidebar";
 import StudentTopbar from "../student/StudentTopbar";
 
@@ -12,6 +12,7 @@ const StudentLayout = () => {
       <div className="flex-1 flex flex-col">
         <StudentTopbar />
         <main className="p-6">
+          <ScrollRestoration />
           <Outlet />
         </main>
       </div>

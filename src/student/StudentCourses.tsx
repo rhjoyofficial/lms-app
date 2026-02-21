@@ -143,9 +143,9 @@ const StudentCourses = ({ courses }: Props) => {
                   <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-2">
                     <p className="text-xs text-amber-800 font-medium">
                       📅 শুরু হবে:{" "}
-                      {new Date(course.start_at!).toLocaleDateString("bn-BD", {
+                      {new Date(course.start_at!).toLocaleDateString("en-US", {
                         day: "numeric",
-                        month: "short",
+                        month: "long",
                         year: "numeric",
                       })}
                     </p>
@@ -175,7 +175,7 @@ const StudentCourses = ({ courses }: Props) => {
                       navigate(`/student/courses/${course.id}`);
                     }
                   }}
-                  disabled={isLocked}
+                  disabled={!!isLocked}
                   className={`mt-4 w-full py-2 rounded transition ${
                     isLocked
                       ? "bg-gray-300 text-gray-500 cursor-not-allowed"

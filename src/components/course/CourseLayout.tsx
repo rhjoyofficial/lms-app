@@ -1,8 +1,12 @@
 import CourseContentLeft from "./CourseContentLeft";
 import CourseEnrollCard from "./CourseEnrollCard";
 import CourseGuidelineSection from "./CourseGuidelineSection";
+import type { Course } from "../../types/course.types";
 
-const CourseLayout = ({ course }) => {
+interface Props {
+  course: Course;
+}
+const CourseLayout = ({ course }: Props) => {
   if (!course) return null;
   if (course.has_demo_video && course.demo_video_url) {
     return (
@@ -79,6 +83,16 @@ const CourseLayout = ({ course }) => {
             offerPrice={Number(course.offerPrice)}
           />
         </div>
+      </div>
+
+      {/* Mobile enroll CTA — rendered outside the hidden grid column */}
+      <div className="lg:hidden">
+        <CourseEnrollCard
+          courseId={course.id}
+          price={Number(course.price)}
+          offerPrice={Number(course.offerPrice)}
+          mobileOnly
+        />
       </div>
     </section>
   );

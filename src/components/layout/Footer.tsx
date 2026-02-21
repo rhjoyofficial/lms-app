@@ -33,7 +33,7 @@ const Footer = () => {
             <div className="flex gap-4 mt-6 text-base text-text-secondary font-inter">
               {/* Facebook */}
               <a
-                href="#"
+                href="https://www.facebook.com/CMMoinInfinityAcademy/"
                 className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
               >
                 <svg className="w-4 h-4" fill="white" viewBox="0 0 9 16">
@@ -43,7 +43,7 @@ const Footer = () => {
 
               {/* Whatsapp */}
               <a
-                href="#"
+                href="https://wa.me/8801334943784"
                 className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
               >
                 <svg className="w-4 h-4" fill="white" viewBox="0 0 16 16">
@@ -53,7 +53,7 @@ const Footer = () => {
 
               {/* YouTube */}
               <a
-                href="#"
+                href="https://www.youtube.com/@CMMoinInfinityAcademy"
                 className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
               >
                 <svg className="w-4 h-4" fill="white" viewBox="0 0 24 24">
@@ -123,17 +123,17 @@ const Footer = () => {
             <ul className="space-y-3 text-base text-text-secondary font-inter">
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-white/90" />
-                support@azmion.com
+                support@cmmoin.academy
               </li>
 
               <li className="flex items-center gap-3">
                 <FaPhoneAlt className="text-white/90" />
-                +880 1234 567890
+                +880 13349 43784
               </li>
 
               <li className="flex items-center gap-3">
                 <FaClock className="text-white/90" />
-                Monday to Sunday, 9:00 AM – 6:00 PM
+                Saturday to Thursday, 9:00 AM – 6:00 PM
               </li>
 
               <li className="flex items-center gap-3">

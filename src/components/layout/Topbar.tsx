@@ -9,21 +9,21 @@ const Topbar = () => {
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
               <path d="M12.667.667H3.333A3.337 3.337 0 0 0 0 4v8a3.34 3.34 0 0 0 3.333 3.333h9.334A3.337 3.337 0 0 0 16 12V4A3.337 3.337 0 0 0 12.667.667M3.333 2h9.334a2 2 0 0 1 1.853 1.258L9.415 8.364a2.005 2.005 0 0 1-2.83 0L1.48 3.258A2 2 0 0 1 3.333 2m9.334 12H3.333a2 2 0 0 1-2-2V5l4.31 4.307a3.34 3.34 0 0 0 4.714 0L14.667 5v7a2 2 0 0 1-2 2" />
             </svg>
-            support@azmion.com
+            support@cmmoin.academy
           </span>
           <span className="flex items-center gap-1">
             {/* Phone SVG */}
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
               <path d="M8.666.667A.667.667 0 0 1 9.333 0a6.674 6.674 0 0 1 6.666 6.667.667.667 0 1 1-1.333 0 5.34 5.34 0 0 0-5.333-5.334.667.667 0 0 1-.667-.666M9.333 4a2.667 2.667 0 0 1 2.666 2.667.667.667 0 0 0 1.334 0 4.004 4.004 0 0 0-4-4 .667.667 0 1 0 0 1.333m6.062 7.16a2.067 2.067 0 0 1 0 2.918l-.607.7C9.328 20.004-3.959 6.72 1.188 1.243l.767-.667a2.054 2.054 0 0 1 2.884.027c.021.02 1.256 1.625 1.256 1.625a2.067 2.067 0 0 1-.004 2.855l-.772.97a8.52 8.52 0 0 0 4.62 4.63l.977-.776a2.067 2.067 0 0 1 2.854-.004s1.604 1.235 1.625 1.255m-.918.969s-1.595-1.228-1.616-1.248a.734.734 0 0 0-1.032 0 302 302 0 0 1-1.363 1.09.67.67 0 0 1-.653.101 10 10 0 0 1-5.88-5.87.67.67 0 0 1 .096-.667s1.072-1.345 1.09-1.362a.733.733 0 0 0 0-1.033c-.021-.02-1.248-1.617-1.248-1.617a.733.733 0 0 0-1.007.026l-.767.667C-1.664 6.737 9.85 17.612 13.813 13.867l.608-.7a.747.747 0 0 0 .056-1.038" />
             </svg>
-            +880 1234 567890
+            +880 13349 43784
           </span>
         </div>
 
         {/* Center */}
         <div className="hidden md:flex text-center flex-1 items-center justify-center gap-2">
           <span className="font-medium text-base">
-            ক্যারিয়ারে এগিয়ে যেতে দরকারি দক্ষতা অর্জন করুন Azmion এ!
+            🎉 ক্যারিয়ারে এগিয়ে যেতে দরকারি দক্ষতা অর্জন করুন CM Moin Academy তে!
           </span>
         </div>
 
@@ -31,7 +31,7 @@ const Topbar = () => {
         <div className="flex items-center gap-2 text-white">
           {/* Facebook */}
           <a
-            href="#"
+            href="https://www.facebook.com/CMMoinInfinityAcademy/"
             className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 9 16">
@@ -41,7 +41,7 @@ const Topbar = () => {
 
           {/* Whatsapp */}
           <a
-            href="#"
+            href="https://wa.me/8801334943784"
             className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
           >
             <svg className="w-4 h-4" fill="white" viewBox="0 0 16 16">
@@ -51,7 +51,7 @@ const Topbar = () => {
 
           {/* YouTube */}
           <a
-            href="#"
+            href="https://www.youtube.com/@CMMoinInfinityAcademy"
             className="flex items-center justify-center w-8 h-8 bg-[#495E5C] rounded-md hover:opacity-90 transition-opacity"
           >
             <svg className="w-4 h-4" fill="white" viewBox="0 0 24 24">

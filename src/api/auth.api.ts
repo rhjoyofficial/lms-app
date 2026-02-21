@@ -22,12 +22,18 @@ export const register = async (payload: RegisterPayload) => {
   return res.data;
 };
 
-export const fetchMe = async () => {
-  const res = await api.get("/auth/me");
-  // console.log(res.data.user);
-  return res.data.user;
-};
-
 export const logout = async () => {
   await api.post("/auth/logout");
+};
+
+
+export const fetchMe = async () => {
+  const res = await api.get("/auth/me");
+  const user = res.data.user;
+
+  if (user.roles && user.roles.length > 0 && typeof user.roles[0] === "object") {
+    user.roles = user.roles.map((role: { name: string }) => role.name);
+  }
+
+  return user;
 };

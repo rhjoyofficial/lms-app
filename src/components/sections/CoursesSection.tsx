@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCourses } from "../../api/course.api";
 import { Link } from "react-router-dom";
-
 interface Course {
   id: number;
   title: string;
@@ -31,15 +30,13 @@ const CoursesSection = () => {
     load();
   }, []);
 
-  if (loading) {
+  if (loading)
     return (
-      <section className="py-20 bg-white">
-        <div className="max-w-8xl mx-auto px-4">
-          <p className="text-center text-gray-500">ডেটা লোড হচ্ছে...</p>
-        </div>
-      </section>
+      <div className="py-20 text-center">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-teal-600"></div>
+        <p className="mt-4 text-gray-600">কোর্স লোড হচ্ছে...</p>
+      </div>
     );
-  }
 
   return (
     <section className="py-4 md:py-20 bg-white">
@@ -53,9 +50,12 @@ const CoursesSection = () => {
             </p>
           </div>
 
-          <button className="mt-6 md:mt-0 px-6 py-3.5 bg-button-primary text-white font-inter rounded-3xl hover:bg-[#27665f] transition">
+          <Link
+            to="/courses"
+            className="mt-6 md:mt-0 px-6 py-3.5 bg-button-primary text-white font-inter rounded-3xl hover:bg-[#27665f] transition"
+          >
             আরও কোর্স দেখুন
-          </button>
+          </Link>
         </div>
 
         {/* Courses */}
@@ -82,11 +82,11 @@ const CoursesSection = () => {
                     isImageRight ? "md:order-2" : ""
                   }`}
                 >
-                  <div className="w-full aspect-[5/3] overflow-hidden rounded-2xl">
+                  <div className="w-full overflow-hidden rounded-2xl">
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain aspect-[5/3] "
                     />
                   </div>
                 </motion.div>
